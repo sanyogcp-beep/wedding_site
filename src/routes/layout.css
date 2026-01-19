@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+@import 'tailwindcss';
+
+@import '@skeletonlabs/skeleton'; 
+@import '@skeletonlabs/skeleton-svelte'; 
+@import '@skeletonlabs/skeleton/themes/cerberus';
+@import '@skeletonlabs/skeleton/themes/mona';
+@import '@skeletonlabs/skeleton/themes/vox';
+@import '@skeletonlabs/skeleton/themes/vintage';
+
+.font-alex {
+  font-family: "Alex Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    @apply bg-red-50;
+}
+
