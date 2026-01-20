@@ -13,10 +13,20 @@
 		<AppBar.Lead class="preset-tonal-warning flex items-center">
 		</AppBar.Lead>
 		<AppBar.Headline class="w-full text-center">
-			<p class="text-[23px] sm:text-[25px] md:text-[48px] lg:text-[50px] font-alex inline-flex justify-center items-center gap-2 text-black relative md:-top-2 md:left-20">Saru<HeartIcon class=""/>Sanyog Wedding</p>
+			<a
+				class="inline-flex md:flex justify-center items-center gap-2 font-alex text-black
+					text-[22px] sm:text-[28px] md:text-[42px] lg:text-[45px]
+					leading-none tracking-tight
+					relative md:-top-1 md:left-20"
+				href="/"
+				>
+					Saru
+					<HeartIcon class="w-[1em] h-[1em]" />
+					Sanyog Wedding
+				</a>
 		</AppBar.Headline>
 
-		<AppBar.Trail class="flex gap-2 text-black ">
+		<AppBar.Trail class="flex gap-2 z-20 text-black ">
 			<a href="/Tidbits" class="btn-icon hover:preset-tonal cursor-pointer" title="Read tidbits about us"><Book class="size-6" /></a>
 			<a href="/api/save-the-date" class="btn-icon hover:preset-tonal cursor-pointer" title="Add to calendar"><CalendarHeart class="size-6" /></a>
 			<a href="/Navigation" class="btn-icon hover:preset-tonal cursor-pointer" title="View venue location"><Navigation class="size-6" /></a>
