@@ -3,10 +3,12 @@
     import { CalendarIcon, CircleUserIcon, MenuIcon, SearchIcon,HeartIcon } from '@lucide/svelte';
     import { goto } from '$app/navigation';
     import { fade } from 'svelte/transition';
-    export const ssr = false;
+    // export const ssr = false;
 
     import { onMount } from 'svelte';
 
+    let ready = $state(false);
+    let isOpen = $state(false);
 
     onMount(() => {
     const images = [
@@ -21,6 +23,8 @@
         const img = new Image();
         img.src = src;
         });
+
+    ready = true
     });
     
 
@@ -37,7 +41,6 @@
     function handleNavigation() {
         goto('/Navigation');
     }
-    let isOpen = $state(false);
     let hoverCard = $state(false);
     let hoverticket = $state(false);
     let hoverNav = $state(false);
@@ -68,16 +71,17 @@
 <div class="mx-auto w-[clamp(320px,90vw,850px)] relative -translate-y-10 md:-translate-y-13" >
 
   <!-- Envelope Image (clickable) -->
-   
+{#if ready} 
 <img
     src="/img/envelop_image.png"
     class="envelope w-full h-auto transition-all object-top duration-500 cursor-pointer"
     class:opacity-0={isOpen}
     class:pointer-events-none={isOpen}
-    bind:this={envelopeImg}
+    
     in:fade={{ duration: 800 }}
     on:click={toggleEnvelope}
 />
+{/if}
 
 
   {#if isOpen}

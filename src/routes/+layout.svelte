@@ -4,8 +4,10 @@
 	import { CalendarIcon, CircleUserIcon, MenuIcon, SearchIcon,HeartIcon,CalendarHeart,Book,Navigation } from '@lucide/svelte';
 	import { AppBar } from '@skeletonlabs/skeleton-svelte';
 	import { fade } from 'svelte/transition';
+	import { page } from '$app/stores';
 
 	let { children } = $props();
+	export const ssr = false;
 
 	
 </script>
@@ -49,10 +51,12 @@
 <!-- <div class="fixed bottom-[-100px] left-[-50px] w-70 h-60 bg-[url('/img/flowers-box.png')] bg-no-repeat bg-contain opacity-70 pointer-events-none" style="filter: brightness(1) sepia(0.5) hue-rotate(280deg) saturate(1.2)"></div> -->
 
 
-<div class="min-h-screen bg-[url('/img/red-linen-fabric-texture-background_38607-884.avif')] bg-no-repeat bg-cover flex flex-col justify-center text-center">
-	<div in:fade={{ duration: 400 }} out:fade={{ duration: 200 }}>
-		<slot />
-	</div>
+<div class="min-h-screen bg-[url('/img/red-linen-fabric-texture-background_38607-884.avif')] bg-no-repeat bg-cover flex flex-col justify-center text-center">	
+		{#key $page.url.pathname}
+		<div in:fade={{ duration: 800 }}>
+			<slot />
+		</div>
+	{/key}	
 </div>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
