@@ -13,9 +13,13 @@
     function handleRSVP() {
         goto('/RSVP');
     }
+    function handleNavigation() {
+        goto('/Navigation');
+    }
     let isOpen = $state(false);
     let hoverCard = $state(false);
     let hoverticket = $state(false);
+    let hoverNav = $state(false);
     // auto-pop the card when envelope opens
     $effect(() => {
         if (isOpen) {
@@ -65,9 +69,27 @@
     </div> -->
 
     <div 
-      class="absolute inset-0 flex items-center justify-center pointer-events-none z-10" 
+      class="absolute inset-0 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 items-center justify-center pointer-events-none z-10" 
     >
-        <div class="bg-white bg-opacity-90 p-4 rounded-lg pointer-events-auto shadow-lg w-[clamp(6rem,15vw,20rem)] rotate-5 translate-x-[clamp(80px,45vw,390px)] transition-transform duration-300"
+        <div class="relative p-4 rounded-lg pointer-events-auto  w-45 sm:w-80 md:w-100 -rotate-5  rotate-80 translate-x-1 sm:translate-x-7 md:translate-x-10 transition-transform duration-300 cursor-pointer pointer-events-auto"
+        on:mouseenter={() => hoverNav = true}
+        on:mouseleave={() => hoverNav = false}
+        on:click={handleNavigation}
+        class:scale-110={hoverNav}
+        class:-translate-y-4={hoverNav}
+        >
+        <img src="/img/compass.png" alt="Ticket" class="w-full h-auto object-fit max-h-[80vh]" />
+        </div>
+        <div class="relative p-4 rounded-lg pointer-events-auto  w-40 sm:w-80 md:w-100 -rotate-5  rotate-80 transition-transform duration-300 -translate-x-4 sm:translate-x-7 md:-translate-x-1 cursor-pointer pointer-events-auto"
+        on:mouseenter={() => hoverticket = true}
+        on:mouseleave={() => hoverticket = false}
+        on:click={handleRSVP}
+        class:scale-110={hoverticket}
+        class:-translate-y-4={hoverticket}
+        >
+        <img src="/img/ticket.png" alt="Ticket" class="w-full h-auto object-fit max-h-[90vh]" />
+        </div>
+        <div class="bg-white bg-opacity-90 p-4 rounded-lg pointer-events-auto shadow-lg w-[clamp(6rem,15vw,20rem)] rotate-5 -translate-x-6.5 md:-translate-x-25 transition-transform duration-300"
             class:scale-110={hoverCard}
             class:-translate-y-4={hoverCard}
             on:mouseenter={() => hoverCard = true}
@@ -75,15 +97,6 @@
             out:fade={{ duration: 100 }}
         >
             <img src="/img/photo_card.png" alt="Photo card" class="w-full h-auto object-fit max-h-[80vh]" />
-        </div>
-        <div class="relative p-4 rounded-lg pointer-events-auto  w-40 sm:w-80 md:w-100 -rotate-5 -translate-x-10 sm:-translate-x-25 md:-translate-x-40 rotate-80 transition-transform duration-300 cursor-pointer pointer-events-auto"
-        on:mouseenter={() => hoverticket = true}
-        on:mouseleave={() => hoverticket = false}
-        on:click={handleRSVP}
-        class:scale-110={hoverticket}
-        class:-translate-y-4={hoverticket}
-        >
-        <img src="/img/ticket.png" alt="Ticket" class="w-full h-auto object-fit max-h-[80vh]" />
         </div>
     </div>
 
