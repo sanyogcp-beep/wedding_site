@@ -76,7 +76,7 @@
         >
             <img src="/img/photo_card.png" alt="Photo card" class="w-full h-auto object-fit max-h-[80vh]" />
         </div>
-        <div class="relative p-4 rounded-lg pointer-events-auto w-[clamp(10rem,20vw,40rem)] -rotate-5 translate-x-[clamp(-150px,-10vw,200px)] rotate-80 transition-transform duration-300 cursor-pointer pointer-events-auto"
+        <div class="relative p-4 rounded-lg pointer-events-auto  w-40 sm:w-80 md:w-100 -rotate-5 -translate-x-10 sm:-translate-x-25 md:-translate-x-40 rotate-80 transition-transform duration-300 cursor-pointer pointer-events-auto"
         on:mouseenter={() => hoverticket = true}
         on:mouseleave={() => hoverticket = false}
         on:click={handleRSVP}
