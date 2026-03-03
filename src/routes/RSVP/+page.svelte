@@ -63,7 +63,7 @@
 	}
 </script>
 
-<div class="w-full max-w-2xl mx-auto p-6">
+<div class="w-full max-w-2xl bg-rose-50 mx-auto p-6">
 	<h1 class="text-[32px] md:text-[48px] font-alex text-black mb-8 text-center">RSVP</h1>
 
 	{#if submitted}

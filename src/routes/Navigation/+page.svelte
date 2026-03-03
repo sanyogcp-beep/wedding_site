@@ -1,9 +1,9 @@
 <script lang="ts">
 </script>
 
-<div class="w-full max-w-4xl mx-auto p-6">
-	<h1 class="text-[32px] md:text-[48px] font-alex text-black mb-4 text-center">Wedding Venue</h1>
-	<p class="text-center text-gray-700 mb-8">Join us in beautiful Basingstoke!</p>
+<div class="w-full max-w-4xl bg-rose-50 mx-auto p-6">
+	<h1 class="text-[32px] md:text-[48px] font-alex text-[rgb(242,176,98)] mb-4 text-center">Wedding Venue</h1>
+	<p class="text-center text-[rgb(242,176,98)] mb-8">Join us in beautiful Basingstoke!</p>
 
 	<!-- Google Maps Embed -->
 	<div class="rounded-xl overflow-hidden shadow-lg mb-8">
@@ -20,8 +20,8 @@
 
 	<!-- Venue Details -->
 	<div class="bg-gradient-to-br from-rose-50 to-pink-50 border-2 border-rose-300 rounded-xl p-6 mb-8">
-		<h2 class="text-2xl font-semibold text-gray-800 mb-4">Venue Details</h2>
-		<div class="space-y-3 text-gray-700">
+		<h2 class="text-2xl font-semibold text-[rgb(242,176,98)] mb-4">Venue Details</h2>
+		<div class="space-y-3 text-[rgb(242,176,98)]">
 			<p><span class="font-semibold">Location:</span> Basingstoke, Hampshire, UK</p>
 			<p><span class="font-semibold">Date:</span> Thursday, 12th of March 2025</p>
 			<p><span class="font-semibold">Time:</span> 12:00 PM onwards</p>

@@ -3,11 +3,14 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import { CalendarIcon, CircleUserIcon, MenuIcon, SearchIcon,HeartIcon,CalendarHeart,Book,Navigation } from '@lucide/svelte';
 	import { AppBar } from '@skeletonlabs/skeleton-svelte';
+	import { fade } from 'svelte/transition';
 
 	let { children } = $props();
+
+	
 </script>
 <!-- <div class="container h-full mx-auto flex justify-center items-center "> -->
- <div class="h-full flex justify-center items-center">
+ <!-- <div class="h-full flex justify-center items-center">
 <AppBar class="rounded-xl bg-rose-100 h-18" >
 	<AppBar.Toolbar class="grid-cols-[auto_1fr_auto] " >
 		<AppBar.Lead class="preset-tonal-warning flex items-center">
@@ -34,10 +37,20 @@
 	</AppBar.Toolbar>
 </AppBar>
 
+</div> -->
+
+
+
+
+<!-- Flowers box decoration at bottom right - no glow -->
+<!-- <div class="fixed bottom-[-100px] right-[-70px] w-70 h-60 bg-[url('/img/flowers-box.png')] bg-no-repeat bg-contain opacity-70 pointer-events-none" style="filter: brightness(1) sepia(0.5) hue-rotate(280deg) saturate(1.2)"></div> -->
+
+<!-- Flowers box decoration at bottom left - no glow -->
+<!-- <div class="fixed bottom-[-100px] left-[-50px] w-70 h-60 bg-[url('/img/flowers-box.png')] bg-no-repeat bg-contain opacity-70 pointer-events-none" style="filter: brightness(1) sepia(0.5) hue-rotate(280deg) saturate(1.2)"></div> -->
+
+
+<div class="min-h-screen bg-[url('/img/red-linen-fabric-texture-background_38607-884.avif')] bg-no-repeat bg-cover flex flex-col justify-center text-center">
+<slot />
 </div>
 
-<div class="min-h-screen flex justify-center relative">
-    <div class="bg-white rounded-xl shadow-xl w-[100%] max-w-[1600px] p-4 relative z-10">
-        {@render children()}
-    </div>
-</div>
+<svelte:head><link rel="icon" href={favicon} /></svelte:head>
