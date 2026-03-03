@@ -67,7 +67,7 @@
     <div 
       class="absolute inset-0 flex items-center justify-center pointer-events-none z-10" 
     >
-        <div class="bg-white bg-opacity-90 p-4 rounded-lg pointer-events-auto shadow-lg w-[clamp(6rem,15vw,20rem)] rotate-5 translate-x-[clamp(80px,37vw,280px)] transition-transform duration-300"
+        <div class="bg-white bg-opacity-90 p-4 rounded-lg pointer-events-auto shadow-lg w-[clamp(6rem,15vw,20rem)] rotate-5 translate-x-[clamp(80px,45vw,390px)] transition-transform duration-300"
             class:scale-110={hoverCard}
             class:-translate-y-4={hoverCard}
             on:mouseenter={() => hoverCard = true}
@@ -76,7 +76,7 @@
         >
             <img src="/img/photo_card.png" alt="Photo card" class="w-full h-auto object-fit max-h-[80vh]" />
         </div>
-        <div class="relative p-4 rounded-lg pointer-events-auto w-[clamp(6rem,10vw,12rem)] -rotate-5 translate-x-[clamp(-50px,50vw,200px)] rotate-80 transition-transform duration-300 cursor-pointer pointer-events-auto"
+        <div class="relative p-4 rounded-lg pointer-events-auto w-[clamp(10rem,20vw,40rem)] -rotate-5 translate-x-[clamp(-150px,-10vw,200px)] rotate-80 transition-transform duration-300 cursor-pointer pointer-events-auto"
         on:mouseenter={() => hoverticket = true}
         on:mouseleave={() => hoverticket = false}
         on:click={handleRSVP}
