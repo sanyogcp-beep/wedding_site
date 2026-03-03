@@ -41,14 +41,3 @@
         {@render children()}
     </div>
 </div>
-
-<!-- Flowers box decoration at bottom right - no glow -->
-<div class="fixed bottom-[-100px] right-[-70px] w-70 h-60 bg-[url('/img/flowers-box.png')] bg-no-repeat bg-contain opacity-70 pointer-events-none" style="filter: brightness(1) sepia(0.5) hue-rotate(280deg) saturate(1.2)"></div>
-
-<!-- Flowers box decoration at bottom left - no glow -->
-<div class="fixed bottom-[-100px] left-[-50px] w-70 h-60 bg-[url('/img/flowers-box.png')] bg-no-repeat bg-contain opacity-70 pointer-events-none" style="filter: brightness(1) sepia(0.5) hue-rotate(280deg) saturate(1.2)"></div>
-
-
-
-
-<!-- <svelte:head><link rel="icon" href={favicon} /></svelte:head> -->
