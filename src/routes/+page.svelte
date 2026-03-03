@@ -3,8 +3,10 @@
     import { CalendarIcon, CircleUserIcon, MenuIcon, SearchIcon,HeartIcon } from '@lucide/svelte';
     import { goto } from '$app/navigation';
     import { fade } from 'svelte/transition';
+    
 
     let envelopeImg; // this will hold the <img> element
+
 
     // paths for the two open-state images
     const openImage1 = "/img/envelop_open_image_1.png";
@@ -31,6 +33,26 @@
             }, 300);
         }
     });
+    $effect(() => {
+        if (isOpen) {
+            let popCount = 0;
+            const popInterval = setInterval(() => {
+                hoverticket = popCount % 2 === 0;
+                popCount++;
+                if (popCount >= 2) clearInterval(popInterval); // pop 3 times (6 toggles)
+            }, 300);
+        }
+    });
+    $effect(() => {
+        if (isOpen) {
+            let popCount = 0;
+            const popInterval = setInterval(() => {
+                hoverNav = popCount % 2 === 0;
+                popCount++;
+                if (popCount >= 2) clearInterval(popInterval); // pop 3 times (6 toggles)
+            }, 300);
+        }
+    });
 
 	function toggleEnvelope() {
 		isOpen = !isOpen;
@@ -39,10 +61,11 @@
 
 </script>
 
-<div class="mx-auto w-[clamp(320px,90vw,850px)] relative" >
+<div class="mx-auto w-[clamp(320px,90vw,850px)] relative -translate-y-10 md:-translate-y-30" >
 
   <!-- Envelope Image (clickable) -->
-  <img
+   
+<img
     src="/img/envelop_image.png"
     class="envelope w-full h-auto transition-all object-top duration-500 cursor-pointer"
     class:opacity-0={isOpen}
@@ -50,7 +73,8 @@
     bind:this={envelopeImg}
     in:fade={{ duration: 800 }}
     on:click={toggleEnvelope}
-  />
+/>
+
 
   {#if isOpen}
     <!-- background open image (behind the card) -->
@@ -69,7 +93,7 @@
     </div> -->
 
     <div 
-      class="absolute inset-0 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 items-center justify-center pointer-events-none z-10" 
+      class="absolute inset-0 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 items-center justify-center pointer-events-none z-10 " 
     >
         <div class="relative p-4 rounded-lg pointer-events-auto  w-45 sm:w-80 md:w-100 -rotate-5  rotate-80 translate-x-1 sm:translate-x-7 md:translate-x-10 transition-transform duration-300 cursor-pointer pointer-events-auto"
         on:mouseenter={() => hoverNav = true}
