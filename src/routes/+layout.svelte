@@ -50,7 +50,9 @@
 
 
 <div class="min-h-screen bg-[url('/img/red-linen-fabric-texture-background_38607-884.avif')] bg-no-repeat bg-cover flex flex-col justify-center text-center">
-<slot />
+	<div in:fade={{ duration: 400 }} out:fade={{ duration: 200 }}>
+		<slot />
+	</div>
 </div>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>

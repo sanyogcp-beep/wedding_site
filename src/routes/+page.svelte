@@ -3,6 +3,25 @@
     import { CalendarIcon, CircleUserIcon, MenuIcon, SearchIcon,HeartIcon } from '@lucide/svelte';
     import { goto } from '$app/navigation';
     import { fade } from 'svelte/transition';
+    export const ssr = false;
+
+    import { onMount } from 'svelte';
+
+
+    onMount(() => {
+    const images = [
+        "/img/envelop_open_image_1.png",
+        "/img/envelop_open_image_2.png",
+        "/img/ticket.png",
+        "/img/compass.png",
+        "/img/photo_card.png"
+    ];
+
+    images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        });
+    });
     
 
     let envelopeImg; // this will hold the <img> element
