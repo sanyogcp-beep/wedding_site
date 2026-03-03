@@ -80,7 +80,7 @@
         >
         <img src="/img/compass.png" alt="Ticket" class="w-full h-auto object-fit max-h-[80vh]" />
         </div>
-        <div class="relative p-4 rounded-lg pointer-events-auto  w-40 sm:w-80 md:w-100 -rotate-5  rotate-80 transition-transform duration-300 -translate-x-4 sm:translate-x-7 md:-translate-x-1 cursor-pointer pointer-events-auto"
+        <div class="relative p-4 rounded-lg pointer-events-auto z-10 w-40 sm:w-80 md:w-100 -rotate-5  rotate-80 transition-transform duration-300 -translate-x-4 sm:translate-x-7 md:-translate-x-1 cursor-pointer pointer-events-auto"
         on:mouseenter={() => hoverticket = true}
         on:mouseleave={() => hoverticket = false}
         on:click={handleRSVP}
@@ -127,14 +127,14 @@
       Sanyog Chhetri & Saru Shrestha
     </p> -->
   <!-- </div> -->
-  <div class="absolute inset-0 flex flex-col justify-end items-center text-center px-4 pt-[clamp(0.1rem,7vw,15vw)] pointer-events-none">
+  <!-- <div class="absolute inset-0 flex flex-col justify-end items-center text-center px-4 pt-[clamp(0.1rem,7vw,15vw)] pointer-events-none">
    <p class="mt-4 font-robo font-thin text-[clamp(1rem,2vw,1.3rem)] text-[rgb(242,176,98)] transition-opacity duration-500"
        class:opacity-0={isOpen}
        class:opacity-100={!isOpen}
        in:fade={{ duration: 600 }}>
       Invite you to celebrate their wedding
     </p>
-    </div>
+    </div> -->
 </div>
 
 <!-- <div class="relative z-10  w-full h-full flex items-center justify-center">

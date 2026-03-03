@@ -63,8 +63,8 @@
 	}
 </script>
 
-<div class="w-full max-w-2xl bg-rose-50 mx-auto p-6">
-	<h1 class="text-[32px] md:text-[48px] font-alex text-black mb-8 text-center">RSVP</h1>
+<div class="w-full max-w-2xl bg-rose-50 rounded-lg mx-auto p-6">
+	<h1 class="text-[32px] md:text-[48px] font-robo text-[rgb(242,176,98)] mb-8 text-center">RSVP</h1>
 
 	{#if submitted}
 		<div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg text-center mb-6">

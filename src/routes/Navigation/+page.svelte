@@ -1,14 +1,14 @@
 <script lang="ts">
 </script>
 
-<div class="w-full max-w-4xl bg-rose-50 mx-auto p-6">
+<div class="w-full max-w-4xl bg-rose-50 rounded-lg mx-auto p-6">
 	<h1 class="text-[32px] md:text-[48px] font-alex text-[rgb(242,176,98)] mb-4 text-center">Wedding Venue</h1>
 	<p class="text-center text-[rgb(242,176,98)] mb-8">Join us in beautiful Basingstoke!</p>
 
 	<!-- Google Maps Embed -->
 	<div class="rounded-xl overflow-hidden shadow-lg mb-8">
 		<iframe
-			title="Wedding Venue - Basingstoke"
+			title="Wedding Venue - Warbrook House, Basingstoke"
 			width="100%"
 			height="500"
 			style="border:0"
