@@ -42,34 +42,19 @@
     let hoverticket = $state(false);
     let hoverNav = $state(false);
     // auto-pop the card when envelope opens
+    function popAnimation(setter: { (v: any): any; (v: any): any; (v: any): any; (arg0: boolean): void; }) {
+    let count = 0;
+    const interval = setInterval(() => {
+        setter(count % 2 === 0);
+        count++;
+        if (count >= 2) clearInterval(interval);
+    }, 300);
+    }
     $effect(() => {
         if (isOpen) {
-            let popCount = 0;
-            const popInterval = setInterval(() => {
-                hoverCard = popCount % 2 === 0;
-                popCount++;
-                if (popCount >= 2) clearInterval(popInterval); // pop 3 times (6 toggles)
-            }, 300);
-        }
-    });
-    $effect(() => {
-        if (isOpen) {
-            let popCount = 0;
-            const popInterval = setInterval(() => {
-                hoverticket = popCount % 2 === 0;
-                popCount++;
-                if (popCount >= 2) clearInterval(popInterval); // pop 3 times (6 toggles)
-            }, 300);
-        }
-    });
-    $effect(() => {
-        if (isOpen) {
-            let popCount = 0;
-            const popInterval = setInterval(() => {
-                hoverNav = popCount % 2 === 0;
-                popCount++;
-                if (popCount >= 2) clearInterval(popInterval); // pop 3 times (6 toggles)
-            }, 300);
+            popAnimation(v => hoverCard = v);
+            popAnimation(v => hoverticket = v);
+            popAnimation(v => hoverNav = v);
         }
     });
 
@@ -80,7 +65,7 @@
 
 </script>
 
-<div class="mx-auto w-[clamp(320px,90vw,850px)] relative -translate-y-10 md:-translate-y-30" >
+<div class="mx-auto w-[clamp(320px,90vw,850px)] relative -translate-y-10 md:-translate-y-13" >
 
   <!-- Envelope Image (clickable) -->
    
