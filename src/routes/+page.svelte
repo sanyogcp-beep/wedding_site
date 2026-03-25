@@ -29,6 +29,7 @@
     
 
     let envelopeImg; // this will hold the <img> element
+    let popped = false;
 
 
     // paths for the two open-state images
@@ -121,11 +122,14 @@
         >
         <img src="/img/ticket.png" alt="Ticket" class="w-full h-auto object-fit max-h-[90vh]" />
         </div>
-        <div class="bg-white bg-opacity-90 p-4 rounded-lg pointer-events-auto shadow-lg w-[clamp(6rem,15vw,20rem)] rotate-5 -translate-x-6.5 md:-translate-x-25 transition-transform duration-300"
+        <div class="relative overflow-hidden bg-white bg-opacity-90 p-0 rounded-lg pointer-events-auto shadow-lg
+           w-[clamp(6rem,15vw,20rem)] rotate-5 -translate-x-6.5 md:-translate-x-25
+           transition-transform duration-300"
             class:scale-110={hoverCard}
             class:-translate-y-4={hoverCard}
             on:mouseenter={() => hoverCard = true}
             on:mouseleave={() => hoverCard = false}
+            on:click={() => popped = !popped}
             out:fade={{ duration: 100 }}
         >
             <img src="/img/photo_card.png" alt="Photo card" class="w-full h-auto object-fit max-h-[80vh]" />
